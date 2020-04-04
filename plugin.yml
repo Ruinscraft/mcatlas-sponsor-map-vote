@@ -1,0 +1,7 @@
+name: sponsormapvote
+main: com.ruinscraft.sponsormapvote.Main
+version: 0
+commands:
+    smap:
+        description: Gives a random map to the user.
+        usage: /<command>
