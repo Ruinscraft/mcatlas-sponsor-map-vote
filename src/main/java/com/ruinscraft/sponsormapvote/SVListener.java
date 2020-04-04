@@ -11,7 +11,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
  
 public class SVListener implements Listener {
- public SVListener(Main plugin) {
+ public SVListener(SMap plugin) {
 	 
  }
  

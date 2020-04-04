@@ -1,5 +1,6 @@
 name: sponsormapvote
-main: com.ruinscraft.sponsormapvote.Main
+main: com.ruinscraft.sponsormapvote.SMap
+api-version: 1.13
 version: 0
 commands:
     smap:

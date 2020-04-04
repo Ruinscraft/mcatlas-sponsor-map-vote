@@ -1,0 +1,6 @@
+# Map data
+maps:
+    map1:
+        name: Sans
+        desc: submitted by JohnCena
+        mapref: 6
