@@ -1,6 +1,7 @@
 package com.ruinscraft.sponsormapvote;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -22,13 +23,12 @@ public class SponsorMapCommand implements CommandExecutor {
         
 		Inventory inv = player.getInventory();
 
-        ArrayList<ItemStack> items = new SMap().buildMap();
-		//Random rand = new Random();
-		//int randInt = rand.nextInt(item.size());
-		//inv.addItem(item.get(randInt));
-		inv.addItem(items.get(0));
+        ArrayList<ItemStack> items = SMap.getInstance().buildMap();
+		Random rand = new Random();
+		int randInt = rand.nextInt(items.size());
+		inv.addItem(items.get(randInt));
 		
-        player.sendMessage(ChatColor.YELLOW + "Map given.");
+        player.sendMessage(ChatColor.YELLOW + "Exclusive sponsor map given to " + player.getName() +".");
 
         return true;
     }

@@ -36,10 +36,11 @@ public final class SMap extends JavaPlugin {
 
 		getLogger().info("onEnable has been invoked!");
 		PluginManager pm = getServer().getPluginManager();
-		SVListener listener = new SVListener(this);
+		SMListener listener = new SMListener(this);
 		pm.registerEvents(listener, this);
-
-		this.getCommand("smap").setExecutor(new SMap());
+		
+		//set smap as a command
+		this.getCommand("smap").setExecutor(new SponsorMapCommand());
 		
 		config.options().copyDefaults(true);
 		saveConfig();
@@ -51,20 +52,18 @@ public final class SMap extends JavaPlugin {
 
 	}
 
+	//builds a random map from yaml
 	public ArrayList<ItemStack> buildMap() {
 		for (String s : config.getConfigurationSection("maps").getKeys(false)) {
 
 			String name = getConfig().getString("maps." + s + ".name");
-			String desc = getConfig().getString("maps" + s + ".desc");
 			int mapRef = getConfig().getInt("maps." + s + ".mapref");
-
 
 			ItemStack map = new ItemStack(Material.FILLED_MAP, 1);
 			MapMeta meta = (MapMeta) map.getItemMeta();
 
 			meta.setMapId(mapRef); // deprecated but works
 			meta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + name);
-			meta.setLore(Arrays.asList(desc));
 			map.setItemMeta(meta);
 			mapList.add(map);
 		}

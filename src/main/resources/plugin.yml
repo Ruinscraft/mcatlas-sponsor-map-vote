@@ -6,3 +6,4 @@ commands:
     smap:
         description: Gives a random map to the user.
         usage: /<command>
+        permission: mcatlas.command.smap

@@ -2,5 +2,16 @@
 maps:
     map1:
         name: Sans
-        desc: submitted by JohnCena
         mapref: 6
+    map2:
+        name: F
+        mapref: 1
+    map3:
+        name: Funny Joke
+        mapref: 2
+    map4:
+        name: A
+        mapref: 3
+    map5:
+        name: t
+        mapref: 4
