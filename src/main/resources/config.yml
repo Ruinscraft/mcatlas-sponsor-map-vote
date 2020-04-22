@@ -1,17 +1,17 @@
 # Map data
 maps:
     map1:
-        name: Sans
-        mapref: 6
-    map2:
-        name: F
-        mapref: 1
-    map3:
-        name: Funny Joke
-        mapref: 2
-    map4:
         name: A
+        mapref: 1
+    map2:
+        name: B
+        mapref: 2
+    map3:
+        name: C
         mapref: 3
-    map5:
-        name: t
+    map4:
+        name: D
         mapref: 4
+    map5:
+        name: E
+        mapref: 5

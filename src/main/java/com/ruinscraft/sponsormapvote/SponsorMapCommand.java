@@ -12,25 +12,28 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 public class SponsorMapCommand implements CommandExecutor {
+	public static ArrayList<ItemStack> items = SMap.getInstance().buildMaps();
 
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!(sender instanceof Player)) {
-            return true;
-        }
+	@Override
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		if (!(sender instanceof Player)) {
+			return true;
+		}
 
-        Player player = (Player) sender;
-        
+		Player player = (Player) sender;
+
 		Inventory inv = player.getInventory();
 
-        ArrayList<ItemStack> items = SMap.getInstance().buildMap();
 		Random rand = new Random();
 		int randInt = rand.nextInt(items.size());
 		inv.addItem(items.get(randInt));
-		
-        player.sendMessage(ChatColor.YELLOW + "Exclusive sponsor map given to " + player.getName() +".");
 
-        return true;
-    }
+		player.sendMessage(ChatColor.YELLOW + "Exclusive sponsor map given to " + player.getName() +"!");
 
+		return true;
+	}
+
+	public static ArrayList<ItemStack> getMaps() {
+		return items;
+	}
 }

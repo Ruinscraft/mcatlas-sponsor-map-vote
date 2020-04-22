@@ -4,6 +4,6 @@ api-version: 1.13
 version: 0
 commands:
     smap:
-        description: Gives a random map to the user.
+        description: Gives a random map to the user. Not meant to be duplicated via crafting table.
         usage: /<command>
         permission: mcatlas.command.smap
