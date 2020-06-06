@@ -3,6 +3,7 @@ package com.ruinscraft.sponsormapvote;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -28,7 +29,7 @@ public class SponsorMapCommand implements CommandExecutor {
 		int randInt = rand.nextInt(items.size());
 		inv.addItem(items.get(randInt));
 
-		player.sendMessage(ChatColor.YELLOW + "Exclusive sponsor map given to " + player.getName() +"!");
+		Bukkit.broadcastMessage(ChatColor.DARK_PURPLE + "Exclusive sponsor map given to " + player.getName() +"!");
 
 		return true;
 	}
